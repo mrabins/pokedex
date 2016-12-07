@@ -16,6 +16,7 @@
 		13CE46581DF771AD0010EC17 /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = 13CE46571DF771AD0010EC17 /* pokemon.csv */; };
 		13CE465B1DF7725C0010EC17 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE465A1DF7725C0010EC17 /* Pokemon.swift */; };
 		13CE465E1DF7778C0010EC17 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE465D1DF7778C0010EC17 /* PokeCell.swift */; };
+		13CE46601DF793C50010EC17 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE465F1DF793C50010EC17 /* csv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		13CE46571DF771AD0010EC17 /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 		13CE465A1DF7725C0010EC17 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		13CE465D1DF7778C0010EC17 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
+		13CE465F1DF793C50010EC17 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = csv.swift; path = ../csv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		13CE46411DF76FEB0010EC17 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				13CE465F1DF793C50010EC17 /* csv.swift */,
 				13CE46421DF76FEB0010EC17 /* AppDelegate.swift */,
 				13CE46441DF76FEB0010EC17 /* ViewController.swift */,
 				13CE46591DF772480010EC17 /* Model */,
@@ -127,6 +130,7 @@
 					13CE463E1DF76FEB0010EC17 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = RY4LKVN272;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -168,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CE46601DF793C50010EC17 /* csv.swift in Sources */,
 				13CE46451DF76FEB0010EC17 /* ViewController.swift in Sources */,
 				13CE465B1DF7725C0010EC17 /* Pokemon.swift in Sources */,
 				13CE464B1DF76FEB0010EC17 /* Pokedex.xcdatamodeld in Sources */,
