@@ -53,9 +53,7 @@ class ViewController: UIViewController {
             let rows = csv.rows
             
             for row in rows {
-                
-                // TODO: Handle this despite knowing the values are not nil
-                
+
                 let pokeID = Int(row["id"]!)!
                 let name = row["identifier"]!
                 
@@ -63,11 +61,12 @@ class ViewController: UIViewController {
                 pokemon.append(poke)
             }
         } catch let err as NSError {
-            
-            // TODO: Handle this more gracefully
-            
-            
             print(err.debugDescription)
+            
+            let alert = UIAlertController(title: "Opps", message: "Something went wrong, please close the app and try again", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
         }
         
     }
