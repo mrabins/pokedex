@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         } catch let err as NSError {
             print(err.debugDescription)
             
-            let alert = UIAlertController(title: "Opps", message: "Something went wrong, please close the app and try again", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Opps", message: "Something went wrong, please close the app and try again.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
