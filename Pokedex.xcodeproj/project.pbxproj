@@ -20,6 +20,7 @@
 		13CE46641DF7E5FB0010EC17 /* PokemonSolidFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13CE46631DF7E5FB0010EC17 /* PokemonSolidFont.ttf */; };
 		13CE46671DF7E8140010EC17 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13CE46651DF7E8140010EC17 /* music.mp3 */; };
 		13CE46681DF7E8140010EC17 /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CE46661DF7E8140010EC17 /* music.png */; };
+		13DC976B1DFB5C36008AEDAA /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DC976A1DFB5C36008AEDAA /* PokemonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		13CE46631DF7E5FB0010EC17 /* PokemonSolidFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonSolidFont.ttf; sourceTree = "<group>"; };
 		13CE46651DF7E8140010EC17 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		13CE46661DF7E8140010EC17 /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
+		13DC976A1DFB5C36008AEDAA /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				13CE46441DF76FEB0010EC17 /* ViewController.swift */,
+				13DC976A1DFB5C36008AEDAA /* PokemonDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			files = (
 				13CE46601DF793C50010EC17 /* csv.swift in Sources */,
 				13CE46451DF76FEB0010EC17 /* ViewController.swift in Sources */,
+				13DC976B1DFB5C36008AEDAA /* PokemonDetailViewController.swift in Sources */,
 				13CE465B1DF7725C0010EC17 /* Pokemon.swift in Sources */,
 				13CE464B1DF76FEB0010EC17 /* Pokedex.xcdatamodeld in Sources */,
 				13CE46431DF76FEB0010EC17 /* AppDelegate.swift in Sources */,
@@ -367,6 +371,7 @@
 				13CE46561DF76FEB0010EC17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

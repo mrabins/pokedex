@@ -87,6 +87,18 @@ class ViewController: UIViewController {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonDetailSegue" {
+            if let detailsVC = segue.destination as? PokemonDetailViewController {
+                if let poke = sender as? Pokemon {
+                    detailsVC.pokemon = poke
+                }
+            }
+        }
+        
+        
+    }
 }
 
 
@@ -116,7 +128,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var poke: Pokemon!
         
+        if inSearchMode {
+            poke = filteredPokemon[indexPath.row]
+        } else {
+            poke = pokemon[indexPath.row]
+        }
+        performSegue(withIdentifier: "PokemonDetailSegue", sender: poke)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -154,17 +173,5 @@ extension ViewController: UISearchBarDelegate {
             collection.reloadData()
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
