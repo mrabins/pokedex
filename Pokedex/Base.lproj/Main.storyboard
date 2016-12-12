@@ -175,17 +175,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pE5-gL-ES5">
-                                        <rect key="frame" x="371" y="22" width="35" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="4s5-id-2mv"/>
-                                            <constraint firstAttribute="width" constant="35" id="OSY-Lv-cKH"/>
-                                        </constraints>
-                                        <state key="normal" image="music.png"/>
-                                        <connections>
-                                            <action selector="musicButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bvn-fZ-fkd"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkK-Ff-bOG">
                                         <rect key="frame" x="8" y="34" width="35" height="23"/>
                                         <constraints>
@@ -193,13 +182,14 @@
                                             <constraint firstAttribute="width" constant="35" id="c4G-9a-atP"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="oj0-kF-20O" eventType="touchUpInside" id="NmQ-pF-JPt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="EkK-Ff-bOG" firstAttribute="leading" secondItem="2XD-sC-3Tn" secondAttribute="leading" constant="8" id="01L-Fg-U8c"/>
-                                    <constraint firstAttribute="trailing" secondItem="pE5-gL-ES5" secondAttribute="trailing" constant="8" id="Kc6-hb-Bu1"/>
-                                    <constraint firstAttribute="bottom" secondItem="pE5-gL-ES5" secondAttribute="bottom" constant="8" id="Not-lX-lLr"/>
                                     <constraint firstAttribute="bottom" secondItem="EkK-Ff-bOG" secondAttribute="bottom" constant="8" id="XHJ-Cv-nVJ"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="fIo-u3-Nvi"/>
                                     <constraint firstAttribute="bottom" secondItem="bIk-4N-TCn" secondAttribute="bottom" constant="8" id="ihh-Eh-q61"/>
@@ -423,6 +413,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="nJh-hd-Jjo" secondAttribute="trailing" id="1Jp-Dw-IR3"/>
                             <constraint firstItem="nJh-hd-Jjo" firstAttribute="top" secondItem="2XD-sC-3Tn" secondAttribute="bottom" constant="8" id="Aa7-V7-M2b"/>
@@ -438,8 +429,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attackLabel" destination="XzX-01-tmf" id="Isg-6D-diQ"/>
+                        <outlet property="currentEvoImage" destination="Q6x-ZR-wLu" id="6Nw-CS-hcU"/>
+                        <outlet property="defenseLabel" destination="R4s-NN-tQl" id="3Ha-IJ-FOw"/>
+                        <outlet property="descriptionLabel" destination="Unb-xD-oud" id="g8e-xU-qXe"/>
+                        <outlet property="evoLabel" destination="L8G-zb-kaZ" id="26u-ht-1un"/>
+                        <outlet property="heightLabel" destination="Rcc-ha-a0p" id="uFb-AZ-P1Q"/>
+                        <outlet property="mainnImage" destination="J5r-oJ-nlH" id="psr-Tz-KTX"/>
                         <outlet property="nameLabel" destination="bIk-4N-TCn" id="5l1-bH-kXR"/>
-                        <outlet property="pokemonImage" destination="J5r-oJ-nlH" id="0Ms-J1-IZw"/>
+                        <outlet property="nextEvoImage" destination="KRL-pU-Ycd" id="Ikh-zM-cad"/>
+                        <outlet property="pokedexLabel" destination="d4Z-KA-f4E" id="a9M-F0-XQN"/>
+                        <outlet property="typeLabel" destination="tDB-F9-w9i" id="n78-7r-bxh"/>
+                        <outlet property="weightLabel" destination="IDf-Lu-Ugn" id="ESX-3y-KyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDK-5p-Ncp" userLabel="First Responder" sceneMemberID="firstResponder"/>
