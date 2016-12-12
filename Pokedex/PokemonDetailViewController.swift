@@ -11,7 +11,7 @@ import UIKit
 class PokemonDetailViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var pokemonImage: UIImageView!
     
     var pokemon: Pokemon!
     
