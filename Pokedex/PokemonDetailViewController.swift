@@ -37,6 +37,26 @@ class PokemonDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         nameLabel.text = pokemon.name.capitalized
+        
+        pokemon.downloadPokemonDetails {
+            // This block of code will only run once the network call is complete
+            self.updateUI()
+            
+            
+        }
+        
+    }
+    
+    func updateUI() {
+        
+        descriptionLabel.text = pokemon.description
+        typeLabel.text = pokemon.type
+        defenseLabel.text = pokemon.defense
+        heightLabel.text = pokemon.height
+        pokedexLabel.text = "\(pokemon.pokedexID)"
+        weightLabel.text = pokemon.weight
+        attackLabel.text = pokemon.attack
+
     }
 
    
