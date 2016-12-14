@@ -12,7 +12,7 @@ class PokemonDetailViewController: UIViewController {
     
     
     // ImageViews
-    @IBOutlet weak var mainnImage: UIImageView!
+    @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var currentEvoImage: UIImageView!
     @IBOutlet weak var nextEvoImage: UIImageView!
 
@@ -33,22 +33,23 @@ class PokemonDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         nameLabel.text = pokemon.name.capitalized
         
+        let image = UIImage(named: "\(pokemon.pokedexID)")
+        mainImage.image = image
+        currentEvoImage.image = image
+        pokedexLabel.text = "\(pokemon.pokedexID)"
+    
         pokemon.downloadPokemonDetails {
             // This block of code will only run once the network call is complete
+
             self.updateUI()
-            
-            
         }
         
     }
     
     func updateUI() {
-        
         descriptionLabel.text = pokemon.description
         typeLabel.text = pokemon.type
         defenseLabel.text = pokemon.defense
@@ -56,7 +57,7 @@ class PokemonDetailViewController: UIViewController {
         pokedexLabel.text = "\(pokemon.pokedexID)"
         weightLabel.text = pokemon.weight
         attackLabel.text = pokemon.attack
-
+        typeLabel.text = pokemon.type
     }
 
    
