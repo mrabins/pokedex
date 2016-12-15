@@ -30,7 +30,6 @@ class PokemonDetailViewController: UIViewController {
     // Global properties
     var pokemon: Pokemon!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,11 +45,9 @@ class PokemonDetailViewController: UIViewController {
 
             self.updateUI()
         }
-        
     }
     
     func updateUI() {
-        descriptionLabel.text = pokemon.description
         typeLabel.text = pokemon.type
         defenseLabel.text = pokemon.defense
         heightLabel.text = pokemon.height
@@ -58,9 +55,19 @@ class PokemonDetailViewController: UIViewController {
         weightLabel.text = pokemon.weight
         attackLabel.text = pokemon.attack
         typeLabel.text = pokemon.type
+        descriptionLabel.text = pokemon.description
+        
+        if pokemon.nextEvolutionId == "" {
+            evoLabel.text = "There Is No Further Evolutions"
+            nextEvoImage.isHidden = true
+        } else {
+            nextEvoImage.isHidden = false
+            nextEvoImage.image = UIImage(named: pokemon.nextEvolutionId)
+            let str = "Next Evolution: \(pokemon.nextEvolutionName) - Level \(pokemon.nextEvolutionLevel)"
+            evoLabel.text = str
+        }
     }
 
-   
     @IBAction func backButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

@@ -21,6 +21,9 @@ class Pokemon {
     private var _weight: String!
     private var _attack: String!
     private var _nextEvolutionText: String!
+    private var _nextEvolutionName: String!
+    private var _nextEvolutionId: String!
+    private var _nextEvolutionLevel: String!
     private var _pokemonURL: String!
     
     var description: String {
@@ -73,6 +76,27 @@ class Pokemon {
         return _pokedexID
     }
     
+    var nextEvolutionName: String {
+        if _nextEvolutionName == nil {
+            _nextEvolutionName = ""
+        }
+        return _nextEvolutionName
+    }
+    
+    var nextEvolutionLevel: String {
+        if _nextEvolutionLevel == nil {
+            _nextEvolutionLevel = ""
+        }
+        return _nextEvolutionLevel
+    }
+    
+    var nextEvolutionId: String {
+        if _nextEvolutionId == nil {
+            _nextEvolutionId = ""
+        }
+        return _nextEvolutionId
+    }
+    
     init(name: String, pokedexID: Int) {
         self._name = name
         self._pokedexID = pokedexID
@@ -112,25 +136,55 @@ class Pokemon {
                         }
                         
                     }
-
+                    
                 } else {
                     self._type = ""
                 }
                 
-                if let descriptionArray = dict["descriptions"] as? [Dictionary<String, String>], descriptionArray.count > 0 {
+                if let descriptionArray = dict["descriptions"] as? [Dictionary<String, String>] , descriptionArray.count > 0 {
                     if let url = descriptionArray[0]["resource_uri"] {
                         let descriptionURL = "\(URL_BASE)\(url)"
                         Alamofire.request(descriptionURL).responseJSON { (response) in
                             if let descriptionDict = response.result.value as? Dictionary<String, AnyObject> {
                                 if let description = descriptionDict["description"] as? String {
                                     let newDescription = description.replacingOccurrences(of: "POKMON", with: "Pokemon")
+                                    self._description = newDescription
                                     print(newDescription)
                                 }
                                 
                             }
+                            completed()
                             
                         }
+                    } else {
+                        self._description = ""
                     }
+                    if let evolutions = dict["evolutions"] as? [Dictionary <String, AnyObject>] , evolutions.count > 0  {
+                        if let nextEvo = evolutions[0]["to"] as? String {
+                            
+                            if nextEvo.range(of: "mega") == nil {
+                                self._nextEvolutionName = nextEvo
+                                
+                                if let uri = evolutions[0]["resource_uri"] as? String {
+                                    let newString = uri.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
+                                    let nextEvoId = newString.replacingOccurrences(of: "/", with: "")
+                                    
+                                    self._nextEvolutionId = nextEvoId
+                                    
+                                    if let levelExist = evolutions[0]["level"] {
+                                        if let level = levelExist as? Int {
+                                            self._nextEvolutionLevel = "\(level)"
+                                        }
+                                        
+                                    } else {
+                                        self._nextEvolutionLevel = ""
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    
                     completed()
                 }
             }

@@ -94,8 +94,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
-        
     }
 }
 
@@ -116,7 +114,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             } else {
                 poke = pokemon[indexPath.row]
                 cell.configureCell(poke)
-                
             }
             
             return cell
@@ -144,12 +141,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if inSearchMode {
             return filteredPokemon.count
         }
-        
         return pokemon.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: 105, height: 105)
     }
 }
@@ -171,5 +166,4 @@ extension ViewController: UISearchBarDelegate {
             collection.reloadData()
         }
     }
-
 }
