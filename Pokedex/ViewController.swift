@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     var pokemon = [Pokemon]()
     var musicPlayer: AVAudioPlayer!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +31,11 @@ class ViewController: UIViewController {
         searchBar.returnKeyType = UIReturnKeyType.done
         parsePokemonCSV()
         initAudio()
+        
+        let randomNumber = arc4random_uniform(50 + 1)
+            
+        print(randomNumber)
+
     }
     
     func initAudio() {

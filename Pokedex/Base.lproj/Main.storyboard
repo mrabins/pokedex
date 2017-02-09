@@ -214,6 +214,9 @@
                                                     <segment title="Moves"/>
                                                 </segments>
                                                 <color key="tintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="segmentedController:" destination="oj0-kF-20O" eventType="valueChanged" id="YKF-jJ-eT9"/>
+                                                </connections>
                                             </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5p-od-W0C">
                                                 <rect key="frame" x="0.0" y="30" width="288" height="120"/>

@@ -68,6 +68,9 @@ class PokemonDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func segmentedController(_ sender: UISegmentedControl) {
+        print("I was toggled")
+    }
     @IBAction func backButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

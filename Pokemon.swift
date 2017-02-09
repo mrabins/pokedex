@@ -184,10 +184,12 @@ class Pokemon {
                             }
                         }
                     }
-                    
                     completed()
                 }
             }
         }
+    }
+    func downloadMovesData(completed: @escaping DownloadComplete) {
+        // handle moves
     }
 }
