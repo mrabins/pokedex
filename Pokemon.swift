@@ -102,12 +102,13 @@ class Pokemon {
         self._pokedexID = pokedexID
         
         self._pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexID)/"
-        
     }
     
     func downloadPokemonDetails(completed: @escaping DownloadComplete) {
         
         Alamofire.request(_pokemonURL).responseJSON { (response) in
+            
+
             
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
                 if let weight = dict["weight"] as? String {

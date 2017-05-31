@@ -36,6 +36,7 @@ class ViewController: UIViewController {
             
         print(randomNumber)
 
+        print("filteredPokemon", type(of: filteredPokemon))
     }
     
     func initAudio() {
